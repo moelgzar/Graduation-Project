@@ -1,11 +1,9 @@
 import RPi.GPIO as GPIO
 import time
 
-buzzer_pin = 21
-delay_sec = 2
 
-#initializes buzzer pin
-def buzzer_init():
+#Function that initializes buzzer pin
+def buzzer_init(buzzer_pin):
 
     #Set the pin numbering mode
     GPIO.setmode(GPIO.BCM)
@@ -13,8 +11,8 @@ def buzzer_init():
     GPIO.setup(buzzer_pin, GPIO.OUT) 
 
 
-#toggle buzzer 
-def buzzer_warning():
+#Function that gives buzzer warning
+def buzzer_warning(buzzer_pin, delay_sec):
 
     GPIO.output(buzzer_pin,GPIO.HIGH)
     time.sleep(delay_sec) 
